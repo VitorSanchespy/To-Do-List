@@ -1,16 +1,14 @@
 <div class="container">
 <h2>Tarefas</h2>
 {{#each allTask}}
-    <li>
+    <li class="check-true">
         {{this.name}}
-        <form class="updateForm" action="/updateCheckBox/{{this.id}}" method="POST"> <!-- Adiciona o ID da tarefa à rota -->
-            <input type="hidden" value="{{this.conclusaotask}}">
-            {{#if isChecked}}
-                <input type="checkbox" class="checkBox" name="checkBox" value="{{this.conclusaotask}}" data-task-id="{{this.id}}" checked>
-            {{else}}
-                <input type="checkbox" class="checkBox" name="checkBox" value="{{this.conclusaotask}}" data-task-id="{{this.id}}">
-            {{/if}}
+        <form action="/update" method="post">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input id="checkbox" value="{{this.conclusaotask}}" type="checkbox" {{#if this.conclusaotask}} checked {{/if}} onchange="updateTask(this)">
+
         </form>
+
         <form action="/delete" method="POST">
             <input type="hidden" name="id" value="{{this.id}}">
             <button type="submit">Deletar</button>

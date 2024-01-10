@@ -41,3 +41,10 @@ body {
     text-decoration: line-through;
     opacity: 0.5;
   }
+ul li.check-true{
+    background-color: green;
+}
+
+ul li.check-true::before{
+  background-color: blue;
+}

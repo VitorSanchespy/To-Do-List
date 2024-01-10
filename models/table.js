@@ -13,9 +13,8 @@ const Task = connect.sequelize.define('Task',{
         allowNull: false
     },
     conclusaotask:{
-        type: DataTypes.ENUM('true', 'false'),
-        defaultValue: 'false',
-        allowNull: false,
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
     }
     
 })

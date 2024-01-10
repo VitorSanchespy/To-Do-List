@@ -12,7 +12,7 @@ rota.post('/add', add);
 
 rota.post('/delete', deleteTask)
 
-rota.post('/updateCheckBox/:taskId', checkBox)
+rota.post('/update', checkBox)
 
 
 
