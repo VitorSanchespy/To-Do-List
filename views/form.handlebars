@@ -3,10 +3,9 @@
 {{#each allTask}}
     <li class="check-true">
         {{this.name}}
-        <form action="/update" method="post">
+        <form action="/update" method="post" id="updateForm_{{this.id}}">
             <input type="hidden" name="id" value="{{this.id}}">
-            <input id="checkbox" value="{{this.conclusaotask}}" type="checkbox" {{#if this.conclusaotask}} checked {{/if}} onchange="updateTask(this)">
-
+            <input   type="checkbox" {{#if this.conclusaotask}} checked {{/if}} onchange="checkBox({{this.id}})">
         </form>
 
         <form action="/delete" method="POST">
