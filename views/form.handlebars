@@ -1,7 +1,7 @@
 <div class="container">
 <h2>Tarefas</h2>
 {{#each allTask}}
-    <li class="check-true">
+    <li class="tasklist">
         {{this.name}}
         <form action="/update" method="post" id="updateForm_{{this.id}}">
             <input type="hidden" name="id" value="{{this.id}}">
